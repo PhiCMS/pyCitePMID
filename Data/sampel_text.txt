@@ -1,0 +1,16 @@
+The COVID-19 pandemic, which started in Wuhan (China) and then spread all over the world has caused almost 496
+million infections and more than 6 million deaths as of April 2022 (World Health Organization). Its causative agent
+the Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) belongs to the Coronaviridae family of single-stranded
+positive-sense RNA viruses (pmid:32816125, pmid:32123347). Other viruses of the same family, namely the Severe acute
+respiratory syndrome coronavirus (SARS-CoV) and the Middle East Respiratory Syndrome coronavirus (MERS-CoV) (pmid:23075143) already
+lead to epidemics in 2002/3 and 2012/?15? respectively (pmid:25720466, pmid:32123347,pmid:27012512). Due to the severity of the current outbreak,
+the scientific community has undergone huge efforts to experimentally determine SARS-CoV-2 genome sequences and three-dimensional
+structures as fast as possible. The unseen amount of publicly available data on a single virus is the groundwork for the development
+of virus-specific drugs that could end the current pandemic. The SARS-CoV-2 genome encodes for structural proteins, and non-structural
+proteins such as 3CLpro, PLpro, helicase, and RNA-dependent RNA polymerase (pmid:32127666). The four non-structural proteins mentioned
+above are key enzymes in the viral cycle (pmid:26868298). The Main protease (Mpro) is being studied a lot in terms of structural and
+functional properties because of its high similarity, with significant conservation in the cleavage site, shared with SARS-CoV (pmid:32544429).
+It is an enzyme involved in the processing of polyprotein which is translated from viral RNA (pmid:32123347, pmid:32272481). Therefore the inhibition of Mpro
+would ultimately suppress viral replication. Furthermore, there are no human proteases with a similar cleavage specificity as MPro,
+making it very unlikely for MPro inhibitors to be toxic (pmid:32198291, pmid:32123347). Considering this evidence, we will put
+the main effort into the SARS-CoV-2 target MPro.

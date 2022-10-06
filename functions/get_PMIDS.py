@@ -52,9 +52,11 @@ def fetch_pmid_cites(text, customReX=None):
 
 
     # give every pmid an index in order of appearance in the text
+    counter = 0
     for idx, row in id_frame.iterrows():
         if row['PMID'] not in list(id_frame.loc[1:idx-1, 'PMID']):
-            id_frame.loc[idx, 'label'] = idx
+            counter += 1
+            id_frame.loc[idx, 'label'] = counter
         elif row['PMID'] in list(id_frame.loc[1:idx-1, 'PMID']):
             try:
                 id_frame.loc[idx, 'label'] = id_frame.loc[1:idx-1].loc[id_frame['PMID'] == row['PMID'], 'label'].item()

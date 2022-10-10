@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     # extract pmids with the standard regEx settings
     # Currently covered PMID<ID>; PMID:<ID>; PMID: <ID>; pmid<ID>; pmid:<ID>, pmid: <ID>
-    frame = get_PMIDS.fetch_pmid_cites(text, customReX=None)
+    frame = get_PMIDS.fetch_pmid_cites(text, pause_dur=2, customReX=None)
 
     # crate new .txt with replaced pmids
     replace_pmid_in_text.update_text(text,frame, write_text)

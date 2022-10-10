@@ -1,13 +1,16 @@
 import re
 import pandas as pd
 from metapub import PubMedFetcher
+import time
+from functions.create_Nature_style_citations import nature_citation
 
 
-
-def fetch_pmid_cites(text, customReX=None):
+def fetch_pmid_cites(text, pause_dur=3,customReX=None):
 
     '''
     :param text: text file as string
+    :param pause_dur: how long the program should pause between requests. Without NCBI API Key its limited
+                        to 3 requests per sec. more at: (https://pypi.org/project/metapub/)
     :param customReX: Custom regular expression string to find the pubmed ids
     :return: pandas data frame containing line of appearance, PMID, Label as running index for order of appearance
             (does consider multi appearing ids), Citation as got from the pubmed server
@@ -41,14 +44,16 @@ def fetch_pmid_cites(text, customReX=None):
             add_line = len(id_frame) + 1
             id_frame.loc[add_line, 'line'] = idx + 1
             id_frame.loc[add_line, 'PMID'] = idBuffer[0]
-            id_frame.loc[add_line, 'Citation'] = fetch.article_by_pmid(idBuffer[0]).citation
+            id_frame.loc[add_line, 'Citation'] = nature_citation(fetch.article_by_pmid(idBuffer[0]))
+            time.sleep(pause_dur)
 
         elif len(idBuffer) > 1:
             for id in idBuffer:
                 add_line = len(id_frame) + 1
                 id_frame.loc[add_line, 'line'] = idx + 1
                 id_frame.loc[add_line, 'PMID'] = id
-                id_frame.loc[add_line, 'Citation'] = fetch.article_by_pmid(id).citation
+                id_frame.loc[add_line, 'Citation'] = nature_citation(fetch.article_by_pmid(id))
+                time.sleep(pause_dur)
 
 
     # give every pmid an index in order of appearance in the text

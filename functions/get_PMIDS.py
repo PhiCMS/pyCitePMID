@@ -41,6 +41,7 @@ def fetch_pmid_cites(text, pause_dur=3,customReX=None):
 
 
         if len(idBuffer) == 1:
+            print(f'Fetching pmid: {idBuffer[0]}')
             add_line = len(id_frame) + 1
             id_frame.loc[add_line, 'line'] = idx + 1
             id_frame.loc[add_line, 'PMID'] = idBuffer[0]
@@ -49,6 +50,7 @@ def fetch_pmid_cites(text, pause_dur=3,customReX=None):
 
         elif len(idBuffer) > 1:
             for id in idBuffer:
+                print(f'Fetching pmid: {id}')
                 add_line = len(id_frame) + 1
                 id_frame.loc[add_line, 'line'] = idx + 1
                 id_frame.loc[add_line, 'PMID'] = id

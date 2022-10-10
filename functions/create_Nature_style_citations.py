@@ -18,15 +18,15 @@ def reformat_author(author_s):
         if len(split) == 2:
             first_letters = str()
             for ele in split[1]:
-                first_letters += ele + '.'
-            return [split[0] + ', ' + first_letters]
+                first_letters += ' ' + ele + '.'
+            return [split[0] + ',' + first_letters]
 
         elif len(split) > 2:
             first_letters = str()
             first_part = ' '.join(split[0:-1])
             for ele in split[-1]:
-                first_letters += ele + '.'
-            return [first_part + ', ' + first_letters]
+                first_letters += ' ' + ele + '.'
+            return [first_part + ',' + first_letters]
 
     else:
         author_list = list()
@@ -38,15 +38,15 @@ def reformat_author(author_s):
             if len(split) == 2:
                 first_letters = str()
                 for ele in split[1]:
-                    first_letters += ele + '.'
-                author_list.append(split[0] + ', ' + first_letters)
+                    first_letters += ' ' + ele + '.'
+                author_list.append(split[0] + ',' + first_letters)
 
             elif len(split) > 2:
                 first_letters = str()
                 first_part = ' '.join(split[0:-1])
                 for ele in split[-1]:
-                    first_letters += ele + '.'
-                author_list.append(first_part + ', ' + first_letters)
+                    first_letters += ' ' + ele + '.'
+                author_list.append(first_part + ',' + first_letters)
 
         return author_list
 
@@ -88,7 +88,7 @@ def nature_citation(fetched_article):
 if __name__ == '__main__':
     from metapub import PubMedFetcher
 
-    test_id = '24346221'
+    test_id = '34326236'
     fetch = PubMedFetcher()
 
     # author test
